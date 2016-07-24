@@ -13,12 +13,12 @@ $(function() {
 				msg += '<div class="' + key + '">$' + key + ': ' + val + '</div>';
 			}); 
 			msg += '<br>LAST UPDATE: ' + h + ':' + m + '<br>'; 
-			$('#rates').append(msg); 
+			$('#rates').html(msg); 
 		}).fail( function(){
 			$('#rates').text('Sorry, we cannot load the rates at this time'); 
 		}).always( function() {
 			var refresh = '<a id="refresh" href="#">'; 
-			refresh += '<img src="images/refresh.png" alt="refresh"></a>;'
+			refresh += '<img src="images/refresh.png" alt="refresh"></a>'; 
 			$('#reload').html(refresh); 
 			$('#refresh').on('click', function(e) {
 				e.preventDefault(); 
