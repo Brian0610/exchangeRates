@@ -12,7 +12,7 @@ $(function() {
 			$.each(data, function(key, val){
 				msg += '<div class="' + key + '">$' + key + ': ' + val + '</div>'
 			}); 
-			$('#rates').append(msg); 
+			$('#rates').html(msg); 
 		}).fail( function(){
 			alert('fail'); 
 			// code goes here
