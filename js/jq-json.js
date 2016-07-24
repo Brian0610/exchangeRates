@@ -10,17 +10,20 @@ $(function() {
 			var m = d.getMinutes();  
 			var msg = '<h2>Exchange Rates</h2>'; 
 			$.each(data, function(key, val){
-				msg += '<div class="' + key + '">$' + key + ': ' + val + '</div>'
+				msg += '<div class="' + key + '">$' + key + ': ' + val + '</div>';
 			}); 
+			msg += '<br>LAST UPDATE: ' + h + ':' + m + '<br>'; 
 			$('#rates').append(msg); 
 		}).fail( function(){
-			alert('fail'); 
-			// code goes here
-
+			$('#rates').text('Sorry, we cannot load the rates at this time'); 
 		}).always( function() {
-			alert('a valiant effort'); 
-			// code goes here
-
+			var refresh = '<a id="refresh" href="#">'; 
+			refresh += '<img src="img/refresh.png" alt="refresh"></a>;'
+			$('#reload').html(refresh); 
+			$('#refresh').on('click', function(e) {
+				e.preventDefault(); 
+				loadRates(); 
+			})
 		}); 
 	}
 
