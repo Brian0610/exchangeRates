@@ -10,7 +10,7 @@ $(function() {
 			var m = d.getMinutes();  
 			var msg = '<h2>Exchange Rates</h2>'; 
 			$.each(data, function(key, val){
-				msg += '<div class="' + key + '">$' + data.AU + ': ' + val + '</div>';
+				msg += '<div class="' + key + '">$' + key + ': ' + val + '</div>';
 			}); 
 			msg += '<br>LAST UPDATE: ' + h + ':' + m + '<br>'; 
 			$('#rates').html(msg); 
